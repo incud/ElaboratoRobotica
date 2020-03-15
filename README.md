@@ -71,7 +71,20 @@ S1[robot_state_publisher] -->|tf_static| S2[move_group]
 
 ## Package `snake-openai`
 
-TODO
+Tentativo di implementare il calcolo della cinematica inversa usando algoritmi di machine learning. 
 
+Per prima cosa modelliamo il robot per mezzo di un oggetto `gym` di *OpenAI*. Questo ci permetterà di lavorare con diverse librerie, senza dover implementare da zero gli algoritmi. Tutto quello che dobbiamo fare è implementare alcune *api*:
 
+- 
+
+Per approfondire vedi https://ai-mrkogao.github.io/reinforcement%20learning/openaigymtutorial/ e https://mc.ai/creating-a-custom-openai-gym-environment-for-stock-trading/.
+
+Creiamo un ambiente `SnakeGym` attraverso una classe astratta. Essa implementa:
+
+- xxx
+
+Implementiamo due classi concrete che ereditano da `SnakeGym`:
+
+- `SnakeGymContinuous`:
+- `SnakeGymDiscrete`:
 
