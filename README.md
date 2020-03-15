@@ -56,7 +56,20 @@ Selezionare _Global Option > Fixed Frame > link0_.
 
 Premere _Add (in basso a sx) > Robot Model_.
 
-## Package `snake-ai`
+### Lettura e scrittura del valore dei giunti
+
+Per leggere i giunti creo un subscriver sul topic `/joint_state`. Per scrivere i giunti creo un publisher su `move_group/fake_controller_joint_state`. Segue schema sulla comunicazione dei componenti. Per approfondire vedi https://amslaurea.unibo.it/10919/1/Alessandro_Santoni_Thesis_(abstract_ITA).pdf capitolo 4. 
+
+```mermaid
+graph LR
+S1[robot_state_publisher] -->|tf_static| S2[move_group]
+	S2 -->|move_group/fake_controller_joint_state| S3[joint_state_publisher]
+	S3 -->|joint_state| S2
+	S3 -->|joint_state| S1
+
+```
+
+## Package `snake-openai`
 
 TODO
 
