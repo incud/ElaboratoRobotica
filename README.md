@@ -73,6 +73,8 @@ S1[robot_state_publisher] -->|tf_static| S2[move_group]
 
 Tentativo di implementare il calcolo della cinematica inversa usando algoritmi di machine learning. 
 
+Per questo progetto **non serve avere installato ROS**. Serve solamente avere installato le librerie `tensorflow`, `keras`,`keras-rl`, `gym`.
+
 Per prima cosa modelliamo il robot per mezzo di un oggetto `gym` di *OpenAI*. Questo ci permetterà di lavorare con diverse librerie, senza dover implementare da zero gli algoritmi. Tutto quello che dobbiamo fare è implementare alcune *api*:
 
 - 
