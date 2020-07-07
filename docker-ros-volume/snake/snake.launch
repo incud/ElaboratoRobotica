@@ -1,0 +1,15 @@
+<launch>
+    <!-- caricamento del modello URDF -->
+    <param name="robot_description" command="cat $(find snake)/modello_48.urdf"/>
+    <!-- nodo: prende lo stato del robot e rende l'informazione disponibile per tutti i package che usano 'tf' -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+    <!-- nodo: simulatore RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz"/> 
+    <!-- nodo: joint state publisher-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+        <param name="use_gui" value="True"/>
+        <rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam> 
+    </node> 
+    <!-- nodo: ros_snake -->
+    <node name="ros_snake"  pkg="snake" type="ros_snake.py"  output="screen" />
+</launch>
