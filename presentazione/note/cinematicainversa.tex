@@ -1,0 +1,18 @@
+\note[itemize]{
+    \item proponiamo un insieme di algoritmi per il calcolo della cinematica inversa
+    \item dobbiamo essere in grado di valutare ognuno di questi e confrontarlo per decidere il migliore
+    \item ci focalizziamo su due aspetti
+    \item efficienza nelle tempistiche
+    \item efficacie nelle trovare la configurazione dei giunti per il maggior numeri di punti raggiungibili
+    \item riguardo quest'ultimo punto, chiaramente non possiamo testare l'algoritmo per ogni singolo punto dello spazio
+    \item per prima cosa calcoliamo lo spazio raggiungibile dal manipolatore, che è una semisfera di raggio $r$ ottenuto come somma delle lunghezze dei bracci (nell'immagine è presente una fetta di questo spazio)
+    \item in un primo momento, prendiamo un insieme di punti all'interno $N$ punti in rosso da raggiungere con in manipolatore
+    \item in un secondo momento vogliamo invece andare oltre e indicare al manipolatore anche la forma desiderata dell'intero robot. facciamo questo specificando dei punti intermedi in blu - per esempio possiamo trovarci a dover raggiungere un punto rosso passando il più possibile vicino ad un punto blu
+    \item questo però in un secondo momento
+}
+
+\note[itemize]{
+    \item modelliamo il problema di minimizzazione
+    \item la funzione di costo ha in input una configurazione di giunti, ed in output da la distanza tra il punto desiderato e il punto raggiunto dalla configurazione in input
+    \item confrontato con TRAC-IK, libreria che vanta essere la migliore implementazione di cinematica inversa
+}

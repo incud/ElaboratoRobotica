@@ -1,0 +1,95 @@
+\usepackage[italian]{babel}
+\usepackage{pgfpages}
+\usepackage{verbatim}
+\setbeamertemplate{note page}[plain]
+
+% Tikz
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning,snakes,calc,arrows,decorations.markings,shapes.misc,matrix,shapes,arrows,fit,tikzmark,patterns}
+
+% Fonts
+\usepackage{helvet}
+\usepackage[default]{lato}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+% Grafica
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage[clock]{ifsym}
+
+\usepackage{savesym}
+\savesymbol{checkmark}
+\usepackage{dingbat}
+
+% Colori
+\definecolor{blue}{RGB}{0,114,178}
+\definecolor{lightblue}{RGB}{80,194,255}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{black}{RGB}{0,0,0}
+
+\setbeamercolor{normal text}{fg=white,bg=black}
+\setbeamercolor{frametitle}{fg=lightblue}
+\setbeamercolor{title}{fg=white}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+\setbeamercolor{itemize item}{fg=yellow}
+\setbeamercolor{itemize subitem}{fg=yellow}
+\setbeamercolor{enumerate item}{fg=yellow}
+\setbeamercolor{enumerate subitem}{fg=yellow}
+%\setbeamercolor{button}{bg=MyBackground,fg=blueblue,}
+\setbeamercolor{section in toc}{fg=yellow}
+\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=3em,text margin right=3em}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=false,
+  linkbordercolor = {white},
+  linkcolor = {blue}
+}
+
+% Math
+\usepackage{mathpazo}
+\usepackage{amsmath,amssymb,amsfonts,mathtools,IEEEtrantools,siunitx,cancel}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Transition Frame
+\newenvironment{transitionframeenv}{%
+\setbeamercolor{%
+background canvas}{bg=blue}%
+\begin{frame}}%
+{\end{frame}}%
+
+\newcommand{\TransitionFrame}[1]{%
+\begin{transitionframeenv}%
+\begin{center}%
+{\Huge\textcolor{white}{#1}}%
+\end{center}%
+\end{transitionframeenv}}
+
+\newcommand{\Definizione}[2]{%
+\textcolor{yellow}{{#1}}
+
+\medskip\noindent{#2}%
+}
+
+\usepackage[absolute,overlay]{textpos}
+
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+
+\newcommand{\Reference}[3]{\begin{textblock*}{\textwidth}(1cm,8cm)%
+\footnotesize Reference: \emph{#1}, #2, #3
+\end{textblock*}}
+
+\newcommand{\BReference}[3]{\begin{textblock*}{\textwidth}(1cm,8.5cm)%
+\footnotesize Reference: \emph{#1}, #2, #3
+\end{textblock*}}
+
+\usepackage{url}
