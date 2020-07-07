@@ -85,6 +85,20 @@ S1[robot_state_publisher] -->|tf_static| S2[move_group]
 
 Package da lanciare per *non aprire l'interfaccia grafica* ma per *lanciare l'esecuzione batch e raccoglierne i dati*. Lanciare in console `kinematic-test-2.py`. Per esportare i dati o li stampi a console oppure sposti il file con i comandi di Docker. 
 
+## Troubleshoot
+
+A volte se ri-lanciando RVIZ l'interfaccia ha problemi, devo chiudere l'applicativo e ri-lanciare il container.
+
+Cambio il modello utilizzato dalla simulazione in `/root/catkin-ws/src/snake[-2-for-stats]/snake.launch` mettendo qualcosa tipo
+
+`command="$(find xacro)/xacro --inorder '$(find snake)/modello.xacro'"`
+
+per modello XACRO, oppure
+
+``command="cat $(find snake)/modello.urdf"``
+
+per modello URDF.
+
 ## Package `snake-openai` (non funziona)
 
 Tentativo di implementare il calcolo della cinematica inversa usando algoritmi di machine learning. 
