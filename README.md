@@ -4,6 +4,18 @@ Elaborato per il corso di Robotica 2019/2020 dell'Università di Verona.
 
 Il progetto consiste nella modellazione di un robot continuo attraverso un numero finito ma arbitrario di componenti.
 
+## Presentazione
+
+Nella directory `/presentazione` sono presenti i sorgenti latex e le slide in PDF. 
+
+I grafici vengono generati:
+
+- basandosi sui dati in output dello script `/snake-2-for-stats` lanciato su ROS;
+- attraverso un documento Jupyter presente in `/snake-2-for-stats/dataframe-output/analisi robotica.ipynb`;
+- utilizza il package `Pandas` per l'analisi statistica dei dati, e `seaborn` per creare i grafici. 
+
+L'output dei grafici della presentazione è anche presente, copiato, in `/presentazione/...`.
+
 ## Setup
 
 Il modo più semplice di avviare l'applicazione è attraverso Docker. Nella directory _docker-ros_ è presente il necessario per avviare l'applicativo. L'immagine Docker si crea avviando da _docker-ros_ il comando:
@@ -69,7 +81,11 @@ S1[robot_state_publisher] -->|tf_static| S2[move_group]
 
 ```
 
-## Package `snake-openai`
+## Package `snake2-for-stats`
+
+Package da lanciare per *non aprire l'interfaccia grafica* ma per *lanciare l'esecuzione batch e raccoglierne i dati*. Lanciare in console `kinematic-test-2.py`. Per esportare i dati o li stampi a console oppure sposti il file con i comandi di Docker. 
+
+## Package `snake-openai` (non funziona)
 
 Tentativo di implementare il calcolo della cinematica inversa usando algoritmi di machine learning. 
 
